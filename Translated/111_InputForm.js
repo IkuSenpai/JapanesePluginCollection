@@ -2,121 +2,121 @@
 // InputForm.js
 // PUBLIC DOMAIN
 // ----------------------------------------------------------------------------
-// 2017/09/03 iOSで「決定」ボタンを押せないバグを修正＆裏のゲーム画面のクリックを無効に
-// 2018/12/06 入力欄の大きさを画面サイズに追従＆iPhoneで画面がズレるバグ修正＆文字サイズ設定＆初期値設定
-// 2020/08/22 RPGツクールMZに対応
+// 2017/09/03 Fixed a bug that prevented pressing the "Confirm" button on iOS & disabled clicking on the back game screen.
+// 2018/12/06 Input field size follows screen size & fixed the bug of where the screen shifts on iPhone & set text size & initial value.
+// 2020/08/22 Compatible with RPG Maker MZ
 //=============================================================================
 
 /*:
  * @target MZ
- * @plugindesc フォーム作って文字入力（修正版）
+ * @plugindesc Create form and enter text（modified ver）
  * @author １１１, くらむぼん
- *
+ * @translator NamiBoops
  *
  * @help
- * 文字入力フォームを表示して、文字を入力させます。
- * イベントコマンドの「名前入力の処理」とは違い、
- * 慣れ親しんだキーボード入力やフリック入力などを用いられます。
- * また、漢字を含む自由な文字が入力できます。
+ * Display the text input form and have the user enter text.
+ * Unlike the event command "process name input," the
+ * familiar keyboard input, click input, etc. can be used.
+ * In addition, any character, including Kanji characters, can be entered.
  * 
- * ---準備---
- * ゲームフォルダにあるcssフォルダ（なければ作る）に111_InputForm.cssを入れましょう。
- * ちなみにこのファイルをいじって入力フォームのデザイン・幅などを変えられます。
- * いじり方がわからなかったら「css 書き方」などで検索だ！
+ * ---Preparation---
+ * Put 111_InputForm.css in the css folder in your game folder (if you don't have one, create one).
+ * By the way, you can change the design, width, etc. of the input form by tweaking this file.
+ * If you don't know how to tweak it, google something like "how to write css"!
  * 
- * ---RPGツクールMZでの使い方---
- * プラグインコマンドを用いて、入力欄を表示できます。
- * 最低限「入力欄のX位置」「入力欄のY位置」で表示位置を調整して、
- * 「入力結果の代入先」に変数を設定すれば動きます。
- * 必要なら他のパラメータも調節してみてください。
+ * ---How to use in RPG Maker MZ---
+ * Input fields can be displayed using the plugin command.
+ * At a minimum, it will work if the display position is adjusted by "X position of input column"
+ * and "Y position of input column" and a variable is set to "Assign input result to".
+ * Try adjusting other parameters if necessary.
  * 
- * ---RPGツクールMVでの使い方---
- * ◆プラグインコマンド：InputForm x=350;y=200;v=11;max=5;
- * みたいな感じで。この例だとx350,y200の位置に表示、結果を11番の変数に保存。
- * 最大文字数は5（maxは省略すれば無制限にもできる）
+ * ---How to use in RPG Maker MV---
+ * ◆Plug-in Commands：InputForm x=350;y=200;v=11;max=5;
+ * Like so. In this example, it is displayed at x350,y200 and the result is saved in variable 11.
+ * Maximum number of characters is 5 (max can be omitted to make it unlimited)
  *
- * 時間切れなどを作りたい時は、if_s=3;を付けると
- * ”スイッチ３がONになった場合”に強制終了できます
- * 並列イベントの中で、スイッチ３をONにするイベントを作りましょう
- * （ハマリポイント１）なおこの際、強制終了した瞬間の
- * テキストが結果の変数にしっかり保存されていることに注意。
+ * If you want to make time expiration, etc., you can add if_s=3;.
+ * Can be forced to exit "when switch 3 is turned on".
+ * In a parallel event, let's create an event to turn on switch 3
+ * (Point 1) In addition, at this time, the moment of forced termination
+ * Note that the text is stored securely in the resulting variable.
  *
- * 入力が終わるまで次のイベントコマンドは読み込みません
- * （ハマリポイント２）次のイベントコマンドの読み込みまでは
- * 少し間があるため結果の変数を他の並列処理で上書きしないよう注意。
+ * The next event command will not be read until the input is complete
+ * (Point 2) until the next event command is read.
+ * Be careful not to overwrite the resulting variable with another parallel process because there is a short pause.
  *
  *
- * 機能追加：
- * Inputform （中略）btn_x=100;btn_y=100;
- * という書き方で、「決定」ボタンの位置を細かく調整できるようにしました。
- * 値はテキストボックスからの相対位置で、デフォルトはbtn_x=0;btn_y=50;です。
+ * Function Addition：
+ * Inputform （Omission）btn_x=100;btn_y=100;
+ * The position of the "confirmed" button can be fine-tuned by writing
+ * the values are relative to the text box and default to btn_x=0;btn_y=50;.
  *
- * （2018/12/06追加）
- * 入力欄や決定ボタンの縮尺が画面の縮尺に合わせて伸び縮みするようになりました。
+ * （2018/12/06 addition）
+ * The scale of the input fields and decision buttons now expand and contract to match the scale of the screen.
  *
- * Inputform （中略）font_size=30;
- * で入力欄・決定ボタンの文字の大きさを変更できます。
- * font_sizeを指定しなければfont_size=24になります。
+ * Inputform （omission）font_size=30;
+ * To change the size of the text in the input fields and decision buttons.
+ * If font_size is not specified, font_size=24.
  *
- * Inputform （中略）placeholder=文章;
- * で「文章」の内容を最初から入力欄に表示しておくことができます。
- * デフォルトネームを設定しておく場合などにご利用ください。
- * なお、placeholder=$;と指定すると変数vに入っている内容が表示されます。
+ * Inputform （omssion）placeholder=sentence;
+ * The contents of the "text" can be displayed in the input field from the beginning. 
+ * Please use this option if you wish to set a default name.
+ * Note that if placeholder=$; is specified, the contents of the variable v will be displayed.
  *
- * ライセンス：
- * このプラグインの利用法に制限はありません。お好きなようにどうぞ。
+ * License：
+ * There are no restrictions on the usage of this plugin. Do as you wish.
  *
  * @command show
- * @text 文字入力の処理
+ * @text text entry process
  * @desc
  *
  * @arg target_x
  * @type number
- * @text 入力欄のX位置
+ * @text X position of input column
  *
  * @arg target_y
  * @type number
- * @text 入力欄のY位置
+ * @text Y position of input column
  *
  * @arg variables_id
  * @type variable
- * @text 入力結果の代入先
+ * @text assignement of input results
  *
  * @arg max_count
  * @type number
- * @text 最大文字数
+ * @text Max characters
  *
  * @arg if_switch_id
  * @type switch
- * @text ONのとき入力を強制終了
+ * @text Input is forced to terminate when ON.
  *
  * @arg button_x
  * @type number
  * @min -10000
  * @default 0
- * @text 決定ボタンの相対X位置
+ * @text Relative X position of the confirm button
  *
  * @arg button_y
  * @type number
  * @min -10000
  * @default 50
- * @text 決定ボタンの相対Y位置
+ * @text Relative Y position of the confirm button
  *
  * @arg unit_font_size
  * @type number
  * @default 24
- * @text 文字サイズ
+ * @text Font size
  *
  * @arg placeholder
  * @type string
- * @text 入力欄の初期値
+ * @text Initial value of input field
 */
 (function() {
     function stopPropagation(event) {
         event.stopPropagation();
     }
 
-    // css追加
+    // Add css
     (function(){
         var css = document.createElement('link');
         css.rel = "stylesheet";
@@ -125,7 +125,7 @@
         var b_top = document.getElementsByTagName('head')[0];
         b_top.appendChild(css);
     })();
-    // キー入力不可にする為に
+    // To disable key entry.
     Input.form_mode = false;
     var _Input_onKeyDown = Input._onKeyDown;
     Input._onKeyDown = function(event) {
@@ -137,7 +137,7 @@
         if(Input.form_mode)return;
         _Input_onKeyUp.call(this , event)
     };
-    // 入力終わるまで次のイベントコマンド読み込まない
+    // Next event command is not read until the end of input.
     var _Game_Interpreter_updateWaitMode =
             Game_Interpreter.prototype.updateWaitMode;
     Game_Interpreter.prototype.updateWaitMode = function(){
@@ -152,7 +152,7 @@
         this.style.maxWidth = 'calc(100% - ' + this.style.left + ')';
         this.style.maxHeight = 'calc(100% - ' + this.style.top + ')';
     };
-    // 引数のx=350;y=200;みたいなのを可能にする
+    // Allow arguments such as x=350;y=200;.
     var argHash = function(text , arg_names){
         var _args = new Array(arg_names.length);
         var ary = text.split(";");
@@ -206,7 +206,7 @@
                     this.screenAdjust();
                 } ,
                 create : function(){
-                    // 入力フォーム
+                    // Entry Form
                     this.input = document.createElement('input');
                     this.input.setAttribute('id', '_111_input');
                     if(max_count)this.input.setAttribute('maxlength', max_count);
@@ -216,7 +216,7 @@
                     }
                     this.input.setAttribute('value', placeholder || '');
                     document.body.appendChild(this.input);
-                    // 送信ボタン
+                    // Send Button
                     this.submit = document.createElement('input');
                     this.submit.setAttribute('type', 'submit');
                     this.submit.setAttribute('id', '_111_submit');
@@ -246,7 +246,7 @@
                     clearInterval(_event);
                     // SceneManager._scene.start();
                 } ,
-                screenAdjust : function(){ // canvasの左上を基準にした位置に合わせる
+                screenAdjust : function(){ // Align with the upper left corner of the canvas
                     var screen_x , screen_y;
                     var _canvas = document.getElementById('UpperCanvas') || document.getElementById('gameCanvas');
                     var rect = _canvas.getBoundingClientRect();
@@ -258,24 +258,24 @@
             }
             //
             gui.init();
-            // 送信するイベントgui.input.onkeydown = function(e){
+            // Event to send gui.input.onkeydown = function(e){
             gui.input.addEventListener("keydown" ,function(e){
-                if(e.keyCode === 13){ // 決定キーで送信
+                if(e.keyCode === 13){ // Send by pressing the "CONFIRM" key
                     Input.clear();
                     gui.success();
-                    // 親へのイベント伝播を止める（documentのkeydownが反応しないように）
+                    // Stop event propagation to the parent (so that document's keydown does not react)
                     e.stopPropagation();
                 }
             });
-            gui.input.addEventListener("mousedown", stopPropagation); // 裏のゲーム画面のクリック暴発を防ぐ
-            gui.input.addEventListener("touchstart", stopPropagation); // iOSでclickイベント取れない対策
-            gui.submit.addEventListener("mousedown", stopPropagation); // 裏のゲーム画面のクリック暴発を防ぐ
-            gui.submit.addEventListener("touchstart", stopPropagation); // iOSでclickイベント取れない対策
-            gui.submit.addEventListener("click" ,function(){ // 送信ボタンクリック
+            gui.input.addEventListener("mousedown", stopPropagation); // Prevent click outbursts on the game screen.
+            gui.input.addEventListener("touchstart", stopPropagation); // Measures to prevent click events from being taken on iOS
+            gui.submit.addEventListener("mousedown", stopPropagation); // Prevent click outbursts on the game screen.
+            gui.submit.addEventListener("touchstart", stopPropagation); // Measures to prevent click events from being taken on iOS
+            gui.submit.addEventListener("click" ,function(){ // Click Submit button
                 gui.success();
                 return false;
             });
-            // キャンセルするイベント
+            // Event to be cancelled
             if (if_switch_id) {
                 var _event = setInterval(function(){
                     if($gameSwitches.value(if_switch_id)){
@@ -285,7 +285,7 @@
                 }, 1);
             }
 
-            // webではウィンドー大きさ変わる度に%求め直すイベントもいる
+            // On the web, there are some events that re-seek % every time the window size changes.
             //if(! gui.is_pc){
                 var resizeEvent = gui.screenAdjust.bind(gui);
                 window.addEventListener("resize", resizeEvent, false);
