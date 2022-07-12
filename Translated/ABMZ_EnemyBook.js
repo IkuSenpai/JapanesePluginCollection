@@ -2026,7 +2026,7 @@
 
 	if (!Imported) var Imported = {};
 //=============================================================================
-// MVからの雑な移行
+// Miscellaneous transition from MV
 //=============================================================================
 	
 	Window_Base.prototype.textPadding = function() {
@@ -2437,7 +2437,7 @@ Window_Base.prototype.drawCurrentAndMax = function(current, max, x, y,
 
 
 //=============================================================================
-// 戦闘開始時に登録
+// Register at the start of the battle
 //=============================================================================
 	if (ResisterTiming === 1) {
 		var _Game_Troop_setup = Game_Troop.prototype.setup;
@@ -2462,7 +2462,7 @@ Window_Base.prototype.drawCurrentAndMax = function(current, max, x, y,
 			$gameSystem.addToEnemyBook(enemyId);
 		};
 //=============================================================================
-// 戦闘終了時に登録
+// Register at the end of battle
 //=============================================================================
 	} else if (ResisterTiming === 2) {
 		
@@ -2606,9 +2606,9 @@ Window_Base.prototype.drawCurrentAndMax = function(current, max, x, y,
 		this._enemyBookIndexWindow.setup();
 	};
 
-	// v1.17deselectをcloseの後に移動
-	// これが呼ばれた後に
-	// Window_EnemyBookIndex.processCancelが呼ばれる？
+	// v1.17deselect moved after close
+	// After this is called
+	// Window_EnemyBookIndex.processCancel is called?
 	Scene_Battle.prototype.endBattleEnemyBook = function() {
 		this._enemyBookIndexWindow.close();
 		this._enemyBookStatusWindow.close();
@@ -2677,7 +2677,7 @@ Window_Base.prototype.drawCurrentAndMax = function(current, max, x, y,
 		this.addWindow(this._percentWindow);
 		this.addWindow(this._indexWindow);
 		this.addWindow(this._statusWindow);
-		// Xv1.16 （セットアップって自動で呼ばれたような？）
+		// Xv1.16 (setup was called automatically?)
 		this._indexWindow.isAllEnemies = true;
 		this._statusWindow.isAllEnemies = true;
 		this._indexWindow.setup();
@@ -2802,8 +2802,8 @@ Window_Base.prototype.drawCurrentAndMax = function(current, max, x, y,
 	Window_EnemyBookIndex.prototype.setup = function() {
 		this.refresh();
 				// v1.17
-		// setupがいつ呼ばれるかによっては図鑑を開いたときでも
-		// 初期カーソルが0になってしまう恐れ
+		// Depending on when the setup is called, even when the illustrated book is opened.
+		// The initial cursor may become 0.
 		if (!this.isAllEnemies) {
 			this.select(0);
 		// ver1.16
@@ -2833,9 +2833,9 @@ Window_Base.prototype.drawCurrentAndMax = function(current, max, x, y,
 		this._statusWindow.isCheck = true;
 		AB_EnemyBook.backWindow = 'check';
 				// v1.17
-		// setupWhenCheckがいつ呼ばれるかによっては図鑑を開いたときでも
-		// 初期カーソルが0になってしまう恐れ
-		// ただsetupWhenCheckはチェックスキルのときだけ使われるので平気だった
+		// Depending on when setupWhenCheck is called, even when the illustrated book is opened.
+		// The initial cursor may become 0
+		// But setupWhenCheck is only used for check skills, so I was fine with it.
 		if (!this.isAllEnemies) {
 			this.select(0);
 		} else {
@@ -2931,8 +2931,8 @@ Window_Base.prototype.drawCurrentAndMax = function(current, max, x, y,
 		var enemy = this._list[index];
 		var rect = this.itemLineRect(index);
 		var name;
-		// ここは、名前を？にするか判定しているだけなので変えない
-		// v1.18　（↑は間違ってた）
+		// This place has a name? I'm just deciding whether to do it, so I won't change it.
+		// v1.18　(↑ was wrong)
 		if (!this.isAllEnemies || $gameSystem.isInEnemyBook(enemy.enemy())) {
 			name = enemy.name();
 		} else {
@@ -2946,8 +2946,8 @@ Window_Base.prototype.drawCurrentAndMax = function(current, max, x, y,
 			this.drawText(name, rect.x, rect.y, rect.width);
 		}
 	};
-/* ツクールMV rpg_windows.jsより
-Window_Selectable.processCancelでハンドラが呼ばれている。
+/* From Maker MV rpg_windows.js
+Window_Selectable.processCancel The handler is called in.
 Window_Selectable.prototype.processCancel = function() {
     SoundManager.playCancel();
     this.updateInputData();
@@ -2955,7 +2955,7 @@ Window_Selectable.prototype.processCancel = function() {
     this.callCancelHandler();
 };
 */
-// TODO: 戦闘中に図鑑（全体）を開いた後、チェックスキルを使うと何も表示されない
+// TODO: After opening the picture book (whole) during the battle, nothing is displayed when using the check skill.
 	Window_EnemyBookIndex.prototype.processCancel = function() {
 		// v1.17
 		if (this.isAllEnemies) {
@@ -2963,7 +2963,7 @@ Window_Selectable.prototype.processCancel = function() {
 		}
 		this.enemy = null;
 		this._statusWindow.isCheck = false;
-		// v1.17 後ろに移動
+		// v1.17 Move back
 		Window_Selectable.prototype.processCancel.call(this);
 		this.refreshCursor();
 	};
@@ -3055,8 +3055,8 @@ Window_Selectable.prototype.processCancel = function() {
 		}
 	};
 
-// refresh に移動
-// Version 1.11で復活
+// refresh Moved to
+// Version 1.11 Revision
 
 	Window_EnemyBookStatus.prototype.update = function() {
 		Window_Base.prototype.update.call(this);
@@ -3070,20 +3070,20 @@ Window_Selectable.prototype.processCancel = function() {
 				if (this._spriteFrameCountAB % 12 === 0) {
 					if (dataEnemy.sideviewBattler[0]) {
 						var ary = [0,1,2,1];
-						var motionIndex = 0; // 待機モーション
+						var motionIndex = 0; // Standy Motion
 						var pattern = ary[Math.floor(this._spriteFrameCountAB / 12) % 4];
 						var cw = bitmap.width / 9;
 						var ch = bitmap.height / 6;
 						var cx = Math.floor(motionIndex / 6) * 3 + pattern;
 						var cy = motionIndex % 6;
 						this._enemySprite.setFrame(cx * cw, cy * ch, cw, ch);
-						// YEP_X_AnimatedSVEnemiesにはここに Sprite_Enemy.adjustMainBitmapSettingsがある。
-						// これはBitmapを新しく作っている。（？）
-						// サイドビューバトラーの高さと幅を指定していた場合調整される。
+						// YEP_X_AnimatedSVEnemies has Sprite_Enemy.adjustMainBitmapSettings here.
+						// This is making a new Bitmap. (?)
+						// If the height and width of the side view butler were specified, they will be adjusted.
 						// this._enemySprite.bitmap = new Bitmap(cw, ch);
-					// サイドビューバトラーじゃない場合
+					// If not a side view battler
 					} else {
-						// 1回目に表示されるようになったけどはみ出す
+						// It's showing up the first time, but it sticks out.
 						this._enemySprite.setFrame(0,0,bitmap.width, bitmap.height);
 						// undefined
 						// console.log(this._enemySprite.spriteScaleX);
@@ -3169,7 +3169,7 @@ Window_Selectable.prototype.processCancel = function() {
 		this._enemySprite.scale.x = 1;
 		this._enemySprite.scale.y = 1;
 		if ($gameSystem.isSideView()) {
-			// YEP_X_AnimatedSVEnemiesへの対応（v1.08）
+			// Support for YEP_X_AnimatedSVEnemies（v1.08）
 			if (Imported.YEP_X_AnimatedSVEnemies && dataEnemy.sideviewBattler[0]) {
 				name = Yanfly.Util.getRandomElement(dataEnemy.sideviewBattler);
 				bitmap = ImageManager.loadSvActor(name);
@@ -3191,9 +3191,9 @@ Window_Selectable.prototype.processCancel = function() {
 				var cy = 0;
 				this._enemySprite.bitmap = bitmap;
 				this._enemySprite.setHue(hue);
-				// Ver1.11 たぶんこれが原因で1回目に表示されないので、
-				// YEP_X_AnimatedSVEnemiesを使っていないときは
-				// 処理をしない
+				// Ver1.11 This is probably why it is not displayed the first time,
+				// so if you are not using YEP_X_AnimatedSVEnemies,
+				// do not process it.
 				if (Imported.YEP_X_AnimatedSVEnemies) {
 					this._enemySprite.setFrame(cx * cw, cy * ch, cw, ch);
 				}
@@ -3212,7 +3212,7 @@ Window_Selectable.prototype.processCancel = function() {
 			}
 		}
 		// Version 1.11
-		// version 1.13で削除
+		// deleted in version 1.13
 		// this._cw = cw;
 
 		// ver 1.12
@@ -3763,11 +3763,11 @@ BattleManager.updateEvent = function() {
 
 // 
 //=============================================================================
-// v1.28 ショートカットキー
+// v1.28 Shortcut keys
 //=============================================================================
-// 参考プラグイン：Torigoya_OneButtonSkill.js
+// Reference Plug-in：Torigoya_OneButtonSkill.js
 // http://torigoya.hatenadiary.jp/
-// プラグイン制作者：ru_shalm様
+// Plug-in creator：ru_shalm様
 
 
 		var AB_EnemyBook = {
