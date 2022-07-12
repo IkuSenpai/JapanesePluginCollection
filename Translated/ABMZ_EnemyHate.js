@@ -13,263 +13,263 @@
 
 /*:
  * @target MZ
- * @plugindesc v1.18 敵が最もヘイトの高いアクターを狙います。
- * ヘイトはバトル中の行動で変化します。
+ * @plugindesc v1.18 The enemy will target the actor with the most hate.
+ * Hate changes with actions in battle.
  * @author ヱビ
  * @url http://www.zf.em-net.ne.jp/~ebi-games/
  *
  * @requiredAssets img/system/hateline
  * 
  * @param DisplayHateLine
- * @text ヘイトライン表示
+ * @text Hate Line Display
  * @type boolean
- * @on 表示
- * @off 非表示
- * @desc ヘイトラインを表示するかどうかを決めます。
+ * @on Display
+ * @off Hidden
+ * @desc Decide whether to display hate lines.
  * @default false
  * 
  * @param DebugMode
- * @text デバッグモード
+ * @text Debug Mode
  * @type boolean
- * @on 表示
- * @off 非表示
- * @desc ONにするとヘイトが何ポイント増加したかをコンソールに出力します。
+ * @on Display
+ * @off Hidden
+ * @desc When turned on, it outputs to the console how many points the hate has increased.
  * @default false
  * 
  * @param DamageHateFormula
- * @text ダメージヘイト式
- * @desc ダメージを与えたとき増加するヘイトの式です。
- * デフォルト： damage
+ * @text Damage Hate Formula
+ * @desc It is a formula for the amount of hate that increases when damage is inflicted.
+ * Default： damage
  * @default damage
  * 
  * @param MPDamageHateFormula
- * @text MPダメージヘイト式
- * @desc MPダメージを与えたとき増加するヘイトの式です。
- * デフォルト： MPDamage * 5
+ * @text MP Damage Hate Formula
+ * @desc This is a formula for hate that increases when MP damage is inflicted.
+ * Default： MPDamage * 5
  * @default MPDamage * 5
  * 
  * @param HealHateFormula
- * @text 回復ヘイト式
- * @desc 味方を回復したとき増加するヘイトの式です。
- * デフォルト： healPoint * 2
+ * @text Recovery Hate Formula
+ * @desc This is a formula for the amount of hate that is increased when an ally is healed.
+ * Default： healPoint * 2
  * @default healPoint * 2
  * 
  * @param BuffHateFormula
- * @text バフヘイト式
- * @desc 味方にバフを付加したとき増加するヘイトの式です。
- * デフォルト： enemy.atk * 4
+ * @text Buff Hate Formula
+ * @desc This is a formula for the amount of hate that is increased when a buff is added to an ally.
+ * Default： enemy.atk * 4
  * @default enemy.atk * 4
  * 
  * @param DebuffHateFormula
- * @text デバフヘイト式
- * @desc 敵にデバフを付加したとき増加するヘイトの式です。
- * デフォルト： enemy.atk * 4
+ * @text Debuff Hate Formula
+ * @desc This is a formula for the amount of hate that is increased when a debuff is added to an enemy.
+ * Default： enemy.atk * 4
  * @default enemy.atk * 4
  * 
  * @param StateToEnemyHateFormula
- * @text 敵ステート付加ヘイト式
- * @desc 敵にステートを付加した時増加するヘイトの式です。
- * デフォルト： enemy.atk * 4
+ * @text Adding State to Enemy Hate Formula
+ * @desc This is a formula for the amount of hate that is increased when adding state to an enemy.
+ * Default： enemy.atk * 4
  * @default enemy.atk * 4
  * 
  * @param StateToActorHateFormula
- * @text 味方ステート付加ヘイト式
- * @desc 味方にステートを付加した時増加するヘイトの式です。
- * デフォルト： enemy.atk * 4
+ * @text Adding State to Actor Hate Formula
+ * @desc It is a formula for the hate that is increased when a state is added to an ally.
+ * Default： enemy.atk * 4
  * @default enemy.atk * 4
  * 
  * @param RemoveStateHateFormula
- * @text 味方ステート解除ヘイト式
- * @desc 味方からステートを取り除いたとき増加するヘイトの式です。
- * デフォルト： enemy.atk * 4
+ * @text Actor Remove State Hate Formula
+ * @desc This is the formula for the hate that is increased when a state is removed from an ally.
+ * Default： enemy.atk * 4
  * @default enemy.atk * 4
  * 
  * @param ReduceOthersHate
- * @text ヘイト減少モード
+ * @text Hate Reduction
  * @type boolean
- * @on 減らす
- * @off 減らさない
- * @desc ヘイトが増える行動をしたとき、味方のヘイトを減らしますか？
+ * @on Decrease
+ * @off Don't decrease
+ * @desc When you perform an action that increases hate, do you reduce the hate of your allies?
  * @default false
  * 
  * @param OthersHateRateFormula
- * @text 味方ヘイト減少式
+ * @text Actor Hate Reduction Formula
  * @type string
- * @desc 味方のヘイトを減らすときの割合の式です。
- * デフォルト： (100 - (point / enemy.atk)) / 100
+ * @desc This is a formula for the percentage of time when allies' hate is reduced.
+ * Default： (100 - (point / enemy.atk)) / 100
  * @default (100 - (point / enemy.atk)) / 100
  * 
  * @param ---EnemyList---
- * @text ---敵リスト---
+ * @text ---Enemy List---
  * 
  * @param ShowEnemyList
- * @text 敵リスト表示
+ * @text Display Enemy List
  * @parent ---EnemyList---
  * @type boolean
- * @on はい
- * @off いいえ
- * @desc 敵リストを表示しますか？
+ * @on Yes
+ * @off No
+ * @desc Do you want to see the enemy list?
  * @default false
  *
  * @param EnemyListX
- * @text 敵リスト位置X
+ * @text Enemy list position X
  * @parent ---EnemyList---
  * @type number
- * @desc 敵リストのX座標です。
+ * @desc X coordinate of the enemy list.
  * @default 0
  *
  * @param EnemyListY
- * @text 敵リスト位置Y
+ * @text Enemy list position Y
  * @parent ---EnemyList---
  * @type number
- * @desc 敵リストのY座標です。
+ * @desc Y coordinate of the enemy list.
  * @default 0
  * 
  * @param HateIconList
- * @text ヘイトアイコンリスト
+ * @text Hate Icon List
  * @parent ---EnemyList---
  * @type string
- * @desc ヘイト順位のアイコンリストです。左に行くほど高順位です。半角スペースで区切って並べてください。デフォルト：64 5 4 16
+ * @desc List of hate ranking icons. The further to the left, the higher the rank. Please arrange them separated by single-byte spaces. Default：64 5 4 16
  * @default 64 5 4 16
  *
  * @param EnemyListFontSize
- * @text 敵リストフォントサイズ
+ * @text Enemy List Fontsize
  * @parent ---EnemyList---
  * @type number
- * @desc 敵リストのフォントサイズです。
+ * @desc The font size of the enemy list.
  * @default 24
  *
  * @param EnemyListLineHeight
- * @text 敵リスト行の高さ
+ * @text Enemy List Line Height
  * @parent ---EnemyList---
  * @type number
- * @desc 敵リストの行の高さです。
+ * @desc The height of the enemy list line.
  * @default 32
  *
  * @param EnemyListWidth
- * @text 敵リスト幅
+ * @text Enemy List Width
  * @parent ---EnemyList---
  * @type number
- * @desc 敵リストの幅です。
+ * @desc The width of the enemy list.
  * @default 240
  *
  * 
  * 
  * @param HateGaugeColor1
- * @text ヘイトゲージ色1
+ * @text Hate Gauge Color 1
  * @parent ---EnemyList---
  * @type number
- * @desc ヘイトゲージの色1色目です。
+ * @desc This is the first color of the hate gauge.
  * @default 2
  * 
  * @param HateGaugeColor2
- * @text ヘイトゲージ色2
+ * @text Hate Gauge Color 2
  * @parent ---EnemyList---
  * @type number
- * @desc ヘイトゲージの色2色目です。
+ * @desc This is the second color of the hate gauge.
  * @default 10
  *
  * 
  * 
  * @param ---HateGauge---
- * @text ヘイトゲージ
+ * @text Hate Gauge
  * 
  * @param ShowHateGauge
- * @text ヘイトゲージ表示
+ * @text Hate Gauge Display
  * @parent ---HateGauge---
  * @type boolean
- * @on はい
- * @off いいえ
- * @desc パーティリストを表示しますか？
+ * @on Yes
+ * @off No
+ * @desc Do you want to show the party list?
  * @default false
  * 
  * @param HateGaugeWidth
- * @text ヘイトゲージの幅
+ * @text Hate Gauge Width
  * @parent ---HateGauge---
  * @type number
- * @desc ヘイトゲージの幅です。
+ * @desc The width of the hate gauge.
  * @default 180
  * 
  * @param HateGaugeX
- * @text ヘイトゲージのX位置
+ * @text X position of the hate gauge
  * @parent ---HateGauge---
  * @type text
- * @desc ヘイトゲージのメンバーごとのX座標の位置です。
- * index:メンバーの番号、length:メンバーの人数
+ * @desc The location of the X coordinate for each member of the hate gauge.
+ * index:No. of members, length: No. of members
  * @default Graphics.boxWidth /6 * (index +1)
  * 
  * @param HateGaugeY
- * @text ヘイトゲージのY位置
+ * @text Y position of the hate gauge
  * @parent ---HateGauge---
  * @type text
- * @desc ヘイトゲージのメンバーごとのY座標の位置です。
- * index:メンバーの番号、length:メンバーの人数
+ * @desc The location of the Y coordinate for each member of the hate gauge.
+ * index:No. of members, length: No. of members
  * @default  320
  * 
  * @param ShowEnemyNameOnHateGauge
- * @text 敵キャラ名表示（ヘイトゲージ）
+ * @text Enemy Name Display (Hate Gauge)
  * @parent ---HateGauge---
  * @type boolean
- * @on はい
- * @off いいえ
- * @desc ヘイトゲージで敵キャラ名を表示しますか？
+ * @on Yes
+ * @off No
+ * @desc Do you want to display the name of the enemy character on the hate gauge?
  * @default  true
  * 
  * @help
  * ============================================================================
- * どんなプラグイン？
+ * What kind of plug-in?
  * ============================================================================
  * 
- * 敵がアクターに対しヘイトを持ち、最もヘイトの高いアクターを狙うようになります。
- * ヘイトはバトル中の行動で変化します。
+ * The enemy will have hate against the actor and will target the actor with the most hate.
+ * Hate changes with actions in battle.
  * 
  * ============================================================================
- * プラグインコマンド
+ * Plug-in Commands
  * ============================================================================
  *  - v1.10
  * ShowHateLine
- *   ヘイトラインを表示します。
+ *   Displays hate lines.
  * HideHateLine
- *   ヘイトラインを非表示にします。
+ *   Hide hate lines.
  *  - v1.13
  * ShowEnemyHateList
- *   エネミーリストを表示します。
+ *   Displays the enemy list.
  * HideEnemyHateList
- *   エネミーリストを非表示にします。
+ *   Hide the enemy list.
  * ShowHateGauge
- *   ヘイトゲージを表示します。
+ *   Displays the hate gauge.
  * HideHateGauge
- *   ヘイトゲージを非表示にします。
+ *   Hide the hate gauge.
  * 
  * ============================================================================
- * 自動的にたまるヘイト
+ * Hate that automatically accumulates
  * ============================================================================
  * 
- * アクターが敵を対象とするスキルやアイテムを使うと、対象から使用者へのヘイトが
- * 増加します。
- * 敵を対象としたヘイトが増加する行動：
- *   HP・MPダメージ、デバフ付加、バフ解除、ステート付加
+ * When an actor uses a skill or item that targets an enemy, 
+ * hate from the target to the user increases.
+ * Actions that increase hate for the enemy:
+ *   HP/MP damage, debuffing, buff removal, stat addition
  * 
- * アクターが味方を対象とするスキルやアイテムを使うと、その味方を狙っている敵か
- * ら使用者へのヘイトが増加します。
- * 味方を対象としたヘイトが増加する行動：
- *   HP回復、ステート付加、ステートの解除、バフ付加
+ * When an actor uses a skill or item that targets an ally,
+ * it increases the amount of hate on the user from enemies targeting that ally.
+ * Actions that increase hate for allies:
+ *   HP recovery, state addition, state removal, buff addition
  * 
- * プラグインパラメータでどれだけヘイトが増加するか計算式を設定できます。
- * 計算式では、
+ * A plugin parameter allows you to set the formula for how much the hate will increase.
+ * The formula allows the following,
  * ----------------------------------------------------------------------------
- * HPダメージ  （対象が敵のときのみ）  ： damage
- * MPダメージ  （対象が敵のときのみ）  ： MPDamage
- * 回復ポイント（対象が味方のときのみ）： healPoint
- * スキルの使用者                      ： a, user
- * スキルのターゲット                  ： b, target
- * ヘイトが増加する敵                  ： enemy
- * 変数                                ： v
+ * HP Damage （Only if the target is an enemy）      ： damage
+ * MP Damage  （Only if the target is an enemy）     ： MPDamage
+ * Recovery Points（Only if the target is an ally）： healPoint
+ * Skill Users                         ： a, user
+ * Skill Targets                       : b, target
+ * Enemies with increasing hate        ： enemy
+ * Variables                            ： v
  * ----------------------------------------------------------------------------
- * を使えます。
+ * to be used.
  * 
- * スキルの使用者、ターゲット、敵、変数はスキルのダメージ計算式と同じように
- * 扱うことができます。
+ * Skill user, target, enemy, and variables can be treated in the same way
+ * as the skill's damage formula.
  * 例１：使用者の最大HP
  *         user.mhp
  * 例２：12番目の変数
