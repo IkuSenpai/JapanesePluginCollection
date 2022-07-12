@@ -3,8 +3,8 @@
     position: absolute; /* */
 	z-index:999; /* */
 	/* The text size of the text form is specified by the plugin command */
-	width : 15em; /* ←This number indicates the width of the window */
-	height : 1.5em; /* ←This number indicates the height of the window */
+	width : 15em; /* ← This number indicates the width of the window */
+	height : 1.5em; /* ← This number indicates the height of the window */
 
 	font-weight:bold; 
     color: #f8f8f8;
