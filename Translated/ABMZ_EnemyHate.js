@@ -270,31 +270,31 @@
  * 
  * Skill user, target, enemy, and variables can be treated in the same way
  * as the skill's damage formula.
- * 例１：使用者の最大HP
+ * Example１：User's maximum HP
  *         user.mhp
- * 例２：12番目の変数
+ * Example２：12th variable
  *         v[12]
  * 
- * HP・MP吸収攻撃はダメージで増加するヘイトが2倍になります。
+ * HP and MP absorption attacks double the hate that increases with damage.
  * 
  * ============================================================================
- * 「狙われ率」の性質の変化
+ * Changes in the nature of the "target rate"
  * ============================================================================
  * 
- * 「特殊能力値 狙われ率」がヘイトの増加のしやすさになり、増加するヘイトに掛けら
- * れます。これにより、自分へのヘイトが増加しやすい装備を作ったり、ステートを作っ
- * たりすることができます。
+ * The "Special Ability Value Target Rate" becomes the ease of increasing hate and is multiplied by
+ * the increasing hate. This allows you to create equipment and states that are more likely
+ * to increase hate on you.
  * 
  * ============================================================================
- * ヘイトライン
+ * Hate Line
  * ============================================================================
  * 
- * サイドビューでプラグインパラメータDisplayHateLineを1にするとヘイトラインを
- * 表示することができます。表示する場合、img/systemフォルダに
- * "hateline.png" を入れてください。この画像が縦に引き伸ばされて表示されます。
+ * In the side view, the plugin parameter DisplayHateLine can be set to 1
+ * to display the hate line. To display, put "hateline.png" in the img/system folder.
+ * This image is displayed & stretched vertically.
  * 
  * ============================================================================
- * ステートごとのヘイト増加式
+ * Hate Increase Formula per State
  * ============================================================================
  * 
  * ステートのメモ：
