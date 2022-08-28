@@ -45,27 +45,29 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**AdvanceTimeSystem**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AdvanceTimeSystem.js)
 
-[****]()
+[**AirshipEvent**]
 
-[****]()
+[**AirshipHeight**]
 
-[****]()
+[**AlchemySystem**]
 
-[****]()
+[**AllowEventOverlap**]
 
-[****]()
+[**AltGlossary**]
 
-[****]()
+[**AltKeyPatch**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AltKeyPatch.js)
 
-[****]()
+[**AltSkillByTarget**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AltSkillByTarget.js)
 
-[****]()
+[**AlwaysGameActive**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AlwaysGameActive.js)
 
-[****]()
+[**AnalogStickEx**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AnalogStickEx.js)
 
-[****]()
+[**AnimationByPoint**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AnimationByPoint.js)
 
-[****]()
+[**AnimationMv**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AnimationMv.js)
+
+[**AnotherNewGame**]
 
 [****]()
 
