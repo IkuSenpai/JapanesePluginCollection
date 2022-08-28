@@ -5,4 +5,4 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**ABMZ_EnemyBook**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ABMZ_EnemyBook.js)
 
-[**AB_FastTravelByItem**]()
+[**AB_FastTravelByItem**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AB_FastTravelByItem.js)
