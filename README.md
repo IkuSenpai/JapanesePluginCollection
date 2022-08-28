@@ -17,11 +17,11 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**AB_SymbolEncounterMZ**](https://github.com/IkuSenpai/JapanesePluginCollection/raw/main/English%20Plugins/AB_SymbolEncounterMZ.js)
 
-[**AbilitySystem**]()
+[**AbilitySystem**]
 
 [**AbilitySystem_ShowMPTP**](https://github.com/IkuSenpai/JapanesePluginCollection/raw/main/English%20Plugins/AbilitySystem_ShowMPTP.js)
 
-[**AccelerateWindowOpenness**]()
+[**AccelerateWindowOpenness**]
 
 [**AccumulateState**](https://github.com/IkuSenpai/JapanesePluginCollection/raw/main/English%20Plugins/AccumulateState.js)
 
