@@ -16,6 +16,7 @@
  * @plugindesc v1.18 The enemy will target the actor with the most hate.
  * Hate changes with actions in battle.
  * @author evi.
+ * @translator NamiBoops
  * @url http://www.zf.em-net.ne.jp/~ebi-games/
  *
  * @requiredAssets img/system/hateline
