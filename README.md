@@ -3,5 +3,6 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**111_InputForm**](https://github.com/IkuSenpai/JapanesePluginCollection/tree/main/English%20Plugins/111_InputForm)
 
-[**ABMZ_EnemyBook**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/Translated/ABMZ_EnemyBook.js)
+[**ABMZ_EnemyBook**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ABMZ_EnemyBook.js)
 
+[**AB_FastTravelByItem**]()
