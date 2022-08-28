@@ -1,0 +1,35 @@
+/* From here, the settings related to text form design. */
+#_111_input{
+    position: absolute; /* */
+	z-index:999; /* */
+	/* The text size of the text form is specified by the plugin command */
+	width : 15em; /* ← This number indicates the width of the window */
+	height : 1.5em; /* ← This number indicates the height of the window */
+
+	font-weight:bold; 
+    color: #f8f8f8;
+    text-shadow: black 0.04em 0.04em 0em, black -0.04em 0.04em 0em,
+                 black 0.04em -0.04em 0em, black -0.04em -0.04em 0em;
+    font-family: GameFont, rmmz-mainfont;
+
+    border:solid 0.125em #f8f8f8;
+    border-radius: 0.2em;
+    padding: 0.04em 0em;
+    background: rgba(0,0,0, 0.5);
+}
+/* From here, the settings related to the design of the confirm button. */
+#_111_submit{
+	position: absolute; /* */
+	z-index:999; /* */
+
+	font-weight:bold; 
+    color: #f8f8f8;
+    text-shadow: black 0.04em 0.04em 0em, black -0.04em 0.04em 0em,
+                 black 0.04em -0.04em 0em, black -0.04em -0.04em 0em;
+    font-family: GameFont, rmmz-mainfont;
+
+    border:solid 0.125em #f8f8f8;
+    border-radius: 0.2em;
+    padding: 0.04em 0.25em;
+    background: rgba(0,0,0, 0.5);
+}
