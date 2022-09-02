@@ -345,11 +345,11 @@ AB_QuestSystemByItem.js
  */
 
 function Scene_Quest() {
-    this.initialize(... .arguments);
+    this.initialize(...arguments);
 }
 
 function Window_QuestList() {
-    this.initialize(... .arguments);
+    this.initialize(...arguments);
 }
  (() => {
 
@@ -728,7 +728,7 @@ Scene_Quest.prototype.helpAreaHeight = function() {
 // The window for selecting a category of quest on the quest screens.
 
 function Window_QuestCategory() {
-    this.initialize(... .arguments);
+    this.initialize(...arguments);
 }
 
 Window_QuestCategory.prototype = Object.create(Window_HorzCommand.prototype);
@@ -886,7 +886,7 @@ Window_QuestList.prototype.refresh = function() {
 // The window for displaying quest detail.
 
 function Window_QuestDetail() {
-    this.initialize(... .arguments);
+    this.initialize(...arguments);
 }
 
 Window_QuestDetail.prototype = Object.create(Window_Selectable.prototype);
@@ -969,7 +969,7 @@ Window_QuestDetail.prototype.setItem = function(item){
 // The window for selecting a category of quest on the quest screens.
 
 function Window_QuestWarpConfirm() {
-    this.initialize(... .arguments);
+    this.initialize(...arguments);
 }
 
 Window_QuestWarpConfirm.prototype = Object.create(Window_Command.prototype);
