@@ -21,7 +21,7 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**AbilitySystem_ShowMPTP**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AbilitySystem_ShowMPTP.js)
 
-[**AccelerateWindowOpenness**]
+[**AccelerateWindowOpenness**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AccelerateWindowOpenness.js)
 
 [**AccumulateState**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AccumulateState.js)
 
