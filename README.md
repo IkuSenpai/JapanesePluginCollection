@@ -29,27 +29,27 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**ActorPicturOnAltMenuScreen**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ActorPictureOnAltMenuScreen.js)
 
-[**ActorPictures**]
+[**ActorPictures**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ActorPictures.js)
 
 [**AdditionalDescription**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AdditionalDescription.js)
 
 [**AdditionalDrops**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AdditionalDrops.js)
 
-[**AdditionalSkillMessage**]
+[**AdditionalSkillMessage**] - Broken, can't find original.
 
-[**AddSubCategoryWeapon**]
+[**AddSubCategoryWeapon**] - Broken, can't find original.
 
 [**AdjustMenuWindow**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AdjustMenuWindow.js)
 
-[**AdjustPictureGraphical**]
+[**AdjustPictureGraphical**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AdjustPictureGraphical.js)
 
 [**AdvanceTimeSystem**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AdvanceTimeSystem.js)
 
-[**AirshipEvent**]
+[**AirshipEvent**] - Broken, can't find original.
 
-[**AirshipHeight**]
+[**AirshipHeight**] - Broken, can't find original.
 
-[**AlchemySystem**]
+[**AlchemySystem**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AlchemySystem.js)
 
 [**AllowEventOverlap**]
 
