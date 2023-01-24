@@ -17,7 +17,7 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**AB_SymbolEncounterMZ**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AB_SymbolEncounterMZ.js)
 
-[**AbilitySystem**]
+[**AbilitySystem**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AbilitySystem.js)
 
 [**AbilitySystem_ShowMPTP**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AbilitySystem_ShowMPTP.js)
 
