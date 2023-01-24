@@ -51,9 +51,9 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**AlchemySystem**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AlchemySystem.js)
 
-[**AllowEventOverlap**]
+[**AllowEventOverlap**] - Broken, can't find original.
 
-[**AltGlossary**]
+[**AltGlossary**] - Broken, can't find original.
 
 [**AltKeyPatch**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AltKeyPatch.js)
 
@@ -67,7 +67,7 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**AnimationMv**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AnimationMv.js)
 
-[**AnotherNewGame**]
+[**AnotherNewGame**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AnotherNewGame.js)
 
 [****]
 
