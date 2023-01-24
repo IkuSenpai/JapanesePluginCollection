@@ -27,7 +27,7 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**ActorForceEquip**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ActorForceEquip.js)
 
-[**ActorPicturOnAltMenuScreen**]
+[**ActorPicturOnAltMenuScreen**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ActorPictureOnAltMenuScreen.js)
 
 [**ActorPictures**]
 
