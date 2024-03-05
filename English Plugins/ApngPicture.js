@@ -35,6 +35,7 @@ Version
  [Blog]   : https://triacontane.blogspot.jp/
  [Twitter]: https://twitter.com/triacontane/
  [GitHub] : https://github.com/triacontane/
+ [Translator] : https://github.com/IkuSenpai
 =============================================================================*/
 
 /*:
