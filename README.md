@@ -69,7 +69,7 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**AnotherNewGame**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AnotherNewGame.js)
 
-[****]
+[**ApngPicture**]
 
 [****]
 
