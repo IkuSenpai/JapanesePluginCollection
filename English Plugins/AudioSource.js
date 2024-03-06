@@ -20,6 +20,7 @@
  * @target MZ
  * @plugindesc Automatically adjusts volume and pan based on the position of the audio source and listener.
  * @author くらむぼん
+ * @translator IkuSenpai
  *
  * @param listener
  * @type select
