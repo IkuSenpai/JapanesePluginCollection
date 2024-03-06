@@ -1,6 +1,7 @@
 ﻿// ===================================================
 // ARTM_TMEventItemExMz
 // Copyright (c) 2021 Artemis
+// Translated: IkuSenpai
 // This software is released under the MIT license.
 // http://opensource.org/licenses/mit-license.php
 // ===================================================
