@@ -91,17 +91,17 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**ApngPicture**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ApngPicture.js)
 
-[****]
+[**AttackChain**] - Broken, can't find original.
+
+[**AudioPlayForIE**] - Broken, can't find original.
 
 [****]
 
-[****]
+[**AudioThroughIfMute**] - Broken, can't find original.
 
-[****]
+[**AutoBattle**] - Broken, can't find original.
 
-[****]
-
-[****]
+[**AudioSource**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AudioSource.js)
 
 [****]
 
