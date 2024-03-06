@@ -17,6 +17,26 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**AB_SymbolEncounterMZ**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AB_SymbolEncounterMZ.js)
 
+[**ARTM_ActorMultiVictoryMZ**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ARTM_ActorMultiVictoryMZ.js)
+
+[**ARTM_DispStatusInBattleMZ**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ARTM_DispStatusInBattleMZ.js)
+
+[**ARTM_InfluenceActorFaceMZ**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ARTM_InfluenceActorFaceMZ.js)
+
+[**ARTM_InfluenceEnemyImageMZ**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ARTM_InfluenceEnemyImageMZ.js)
+
+[**ARTM_InsertOpeningMapMZ**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ARTM_InsertOpeningMapMZ.js)
+
+[**ARTM_InsertOpeningMap_ForChronus**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ARTM_InsertOpeningMap_ForChronus.js)
+
+[**ARTM_PlayerSensorMZ**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ARTM_PlayerSensorMZ.js)
+
+[**ARTM_TMDescriptionExMZ**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ARTM_TMDescriptionExMZ.js)
+
+[**ARTM_TMEventItemExMz**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ARTM_TMEventItemExMz.js)
+
+[**ARTM_TMGreedShopMZ**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ARTM_TMGreedShopMZ.js)
+
 [**AbilitySystem**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AbilitySystem.js)
 
 [**AbilitySystem_ShowMPTP**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AbilitySystem_ShowMPTP.js)
@@ -69,7 +89,7 @@ A Japanese Plugin Collection that is all being translated by hand by me. Almost 
 
 [**AnotherNewGame**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/AnotherNewGame.js)
 
-[**ApngPicture**]
+[**ApngPicture**](https://raw.githubusercontent.com/IkuSenpai/JapanesePluginCollection/main/English%20Plugins/ApngPicture.js)
 
 [****]
 
